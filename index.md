@@ -1,20 +1,26 @@
 ---
-title       : Data products - BMI calculation
-subtitle    : BMI calculation based on weigth and height with shinyapp
-author      : Pixel81
-job         : Data Analyst
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
-widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
-mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
+title: "Data products - BMI calculation"
+author: "Pixel81"
+highlighter: highlight.js
+output: html_document
+job: Data Analyst
+knit: slidify::knit2slides
+mode: selfcontained
+hitheme: tomorrow
+subtitle: BMI calculation based on weigth and height with shinyapp
+framework: io2012
+widgets:
+- mathjax
+- bootstrap
+- quiz
+- shiny
+- interactive
 ---
 
 ## Data products - BMI Calculator
 
 This application is made for the data science specialisation.  
-THe goal is to made a shiny app working online.  
+The goal is to made a shiny app working online.  
 My product is a simple BMI calculator, based on the weigth and height of the user.
 
 --- .class #id 
@@ -40,5 +46,20 @@ with
 
 ## BMI calculation - Example
 
+This code show how calculation work.
+
+```r
+BMI <- function (weigth,height) 
+       as.numeric(weigth) * 10000 / (as.numeric (height) * as.numeric (height))
+
+Weigth <- 80
+Height <- 180
+BMI_result <- BMI(Weigth, Height)
+print(BMI_result)
+```
+
+```
+## [1] 24.69136
+```
 
 --- .class #id 
